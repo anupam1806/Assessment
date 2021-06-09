@@ -28,4 +28,6 @@ app.get("/login", function(req, res){
 //     console.log("Running on port 3000");
 // });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Running on port %d ", this.address().port,);
+});
